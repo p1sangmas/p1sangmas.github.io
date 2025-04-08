@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimal Portfolio</title>
+    <title>Fakhrul Fauzi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset & Base Styles */
@@ -217,7 +217,7 @@
         .about-content {
             display: flex;
             gap: 4rem;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .about-image {
@@ -257,6 +257,100 @@
             border-radius: 20px;
             font-size: 0.9rem;
             color: var(--secondary-color);
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--accent-color);
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .tabs {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .tab-btn {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .tab-btn.active {
+            text-decoration: underline;
+            color: var(--accent-color);
+        }
+
+
+        .tab-content {
+            margin-top: 1.5rem;
+        }
+
+        .timeline {
+            margin-top: 3rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.3rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.3rem;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background-color: #ddd;
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-subtitle {
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            font-size: 0.95rem;
+            color: var(--light-text);
         }
 
         /* Projects Section */
@@ -324,6 +418,14 @@
             color: var(--secondary-color);
         }
 
+        .tech-tag:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--accent-color);
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+
         .project-links {
             display: flex;
             gap: 1rem;
@@ -336,11 +438,73 @@
             font-size: 0.9rem;
         }
 
+        /* Certifications Section */
+        .certifications {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            margin: 2rem;
+            padding: 4rem;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .certification-card {
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .certification-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .certification-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: var(--accent-color);
+        }
+
+        .certification-title {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .certification-issuer {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        .certification-date {
+            font-size: 0.8rem;
+            color: var(--light-text);
+            margin-top: 0.5rem;
+        }
+
         /* Contact Section */
         .contact {
             background-color: var(--card-bg);
             border-radius: 20px;
-            margin: 2rem;
+            margin: 6rem 2rem;
             padding: 4rem;
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
         }
@@ -561,10 +725,11 @@
     <header id="header">
         <div class="container">
             <nav>
-                <a href="#" class="logo">Portfolio</a>
+                <a href="#" class="logo">Fakhrul Fauzi</a>
                 <div class="nav-links">
                     <a href="#about">About</a>
                     <a href="#projects">Projects</a>
+                    <a href="#certifications">Certifications</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <button class="mobile-menu-btn">
@@ -579,7 +744,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Hi, I'm <span style="color: var(--accent-color);">Fakhrul Fauzi</span></h1>
-                <p>A passionate [Your Profession] specializing in [Your Skills]. I create elegant solutions to complex problems.</p>
+                <p>A self-taught developer with an interest in Computer Engineering and Machine Learning.</p>
                 <div class="hero-btns">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
                     <a href="#contact" class="btn btn-secondary">Contact Me</a>
@@ -598,20 +763,96 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="p1sangmas.github.io/images/DSC02416.JPG" alt="Profile Image">
+                    <img src="images/DSC02416.JPG" alt="Profile Image">
                 </div>
                 <div class="about-text">
                     <h3>Who am I?</h3>
-                    <p>I'm a [Your Profession] based in [Your Location]. I recently graduated from [Your University] with a degree in [Your Degree]. I'm passionate about creating digital experiences that are both beautiful and functional.</p>
-                    <p>My journey in [Your Field] began [how you got started]. Since then, I've worked on various projects ranging from [mention types of projects] to [another type of project].</p>
-                    <p>When I'm not coding, you can find me [your hobbies or interests].</p>
+                    <p>I'm a Computer Engineering Student based in Seremban, Negeri Sembilan. I'm passionate about creating digital experiences that are both beautiful and functional.</p>
+                    <p>My journey in technology began when I was in high school and discovered my passion for programming. Since then, I've worked on various projects ranging from web development to machine learning applications.</p>
+                    <p>When I'm not coding, you can find me doing <b>photography</b> or <b>content creating on media social platforms.</b></p>
+                    
                     <div class="skills">
-                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Swift</span>
                         <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
                         <span class="skill-tag">Node.js</span>
                         <span class="skill-tag">UI/UX Design</span>
-                        <span class="skill-tag">Python</span>
+                    </div>
+
+                    <!-- Tabs for Education and Experience -->
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="education">Education</button>
+                        <button class="tab-btn" data-tab="experience">Experience</button>
+                    </div>
+                    <div class="tab-content" id="education">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2021 - 2025</div>
+                                <h4 class="timeline-title">Bachelor of Computer Engineering with Honours</h4>
+                                <div class="timeline-subtitle">Universiti Teknikal Malaysia Melaka (UTeM)</div>
+                                <p class="timeline-description">
+                                    Specialized in Computer Engineering and Machine Learning. CGPA: 3.5/4.0
+                                </p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2020 - 2021</div>
+                                <h4 class="timeline-title">Foundation in Science</h4>
+                                <div class="timeline-subtitle">Center of Foundation Studies, UiTM Dengkil</div>
+                                <p class="timeline-description">
+                                    Focused on Physics, Chemistry, and Mathematics. CGPA: 3.45/4.0
+                                </p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2015 - 2019</div>
+                                <h4 class="timeline-title">Sijil Pelajaran Malaysia</h4>
+                                <div class="timeline-subtitle">MARA Junior Science College (MRSM) Kota Putra Ulul Albab</div>
+                                <p class="timeline-description">
+                                    Focused on Quranic, Science, Mathematics and Leadership. Grade: 9A 2B
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="experience" style="display: none;">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">Jul 2024 - Sep 2024</div>
+                                <h4 class="timeline-title">Engineer Intern</h4>
+                                <div class="timeline-subtitle">SMK Electronics (M) Sdn Bhd</div>
+                                <p class="timeline-description">
+                                    - Developed a software tool to enhance production's quality control<br>
+                                    - Led a project to improve LCD Vision Inspection Checker machine<br>
+                                    - Assisted engineers in troubleshooting and maintaining production equipment
+                                </p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Jan 2022 - Present</div>
+                                <h4 class="timeline-title">Photographer</h4>
+                                <div class="timeline-subtitle">Self-employed</div>
+                                <p class="timeline-description">
+                                    - Offering high-quality, visually compelling photography tailored to client's needs<br>
+                                    - Comprehensive post-processing and digital enhancements to ensure professional-grade images ready for print or digital use
+                                </p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Mar 2023 - Dec 2024</div>
+                                <h4 class="timeline-title">Graphic Designer / Social Media Admin</h4>
+                                <div class="timeline-subtitle">DSeri Confinement Beauty (Freelance)</div>
+                                <p class="timeline-description">
+                                    - Create compelling promotional materials including posters and digital assets<br>
+                                    - Managed the content creation for social media platforms<br>
+                                </p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Oct 2019 - Mac 2020</div>
+                                <h4 class="timeline-title">Barista</h4>
+                                <div class="timeline-subtitle">The Coffee Bean & Tea Leaf®</div>
+                                <p class="timeline-description">
+                                    - Developed strong multitasking and problem-solving skills in a fast-paced café environment<br>
+                                    - Enhanced interpersonal and troubleshooting abilities by addressing client needs and resolving issues promptly<br>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -688,6 +929,54 @@
             </div>
         </div>
     </section>
+    
+    <!-- Certifications Section -->
+<section id="certifications" class="certifications">
+    <div class="container">
+        <div class="section-header">
+            <h2>Certifications</h2>
+            <p>Here are some of my professional certifications</p>
+        </div>
+        <div class="certifications-grid">
+            <div class="certification-card">
+                <div class="certification-header">
+                    <div class="certification-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div>
+                        <h4 class="certification-title">Google Data Analytics</h4>
+                        <div class="certification-issuer">Google</div>
+                    </div>
+                </div>
+                <div class="certification-date">Issued Aug 2023</div>
+            </div>
+            <div class="certification-card">
+                <div class="certification-header">
+                    <div class="certification-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div>
+                        <h4 class="certification-title">Azure AI Fundamentals</h4>
+                        <div class="certification-issuer">Microsoft</div>
+                    </div>
+                </div>
+                <div class="certification-date">Issued May 2023</div>
+            </div>
+            <div class="certification-card">
+                <div class="certification-header">
+                    <div class="certification-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div>
+                        <h4 class="certification-title">Python for Data Science</h4>
+                        <div class="certification-issuer">IBM</div>
+                    </div>
+                </div>
+                <div class="certification-date">Issued Feb 2023</div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -706,7 +995,7 @@
                             </div>
                             <div>
                                 <h4>Email</h4>
-                                <p>your.email@example.com</p>
+                                <p>fakhrulfauzi02@gmail.com</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -715,7 +1004,7 @@
                             </div>
                             <div>
                                 <h4>Phone</h4>
-                                <p>+1 (123) 456-7890</p>
+                                <p>+6 (011) 1086-5773</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -724,7 +1013,7 @@
                             </div>
                             <div>
                                 <h4>Location</h4>
-                                <p>City, Country</p>
+                                <p>Seremban, Negeri Sembilan</p>
                             </div>
                         </div>
                     </div>
@@ -764,7 +1053,7 @@
                     <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                 </div>
-                <p class="copyright">© <span id="year"></span> Your Name. All rights reserved.</p>
+                <p class="copyright">© <span id="year"></span> Fakhrul Fauzi. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -857,6 +1146,21 @@
 
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
+
+        // Tabs functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.style.display = 'none');
+
+                this.classList.add('active');
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).style.display = 'block';
+            });
+        });
     </script>
 </body>
 </html>
