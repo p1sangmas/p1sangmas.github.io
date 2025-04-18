@@ -492,6 +492,11 @@ nav {
     margin-top: 0.5rem;
 }
 
+.certification-links {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+}
+
 /* Contact Section */
 .contact {
     background-color: var(--card-bg);
